@@ -1,0 +1,204 @@
+/* assets/css/style.css */
+
+/* CSS Değişkenleri ile Temel Renk Paleti */
+:root {
+    --primary-green: #4CAF50; /* Ana Yeşil Tonu */
+    --secondary-blue: #2196F3; /* İkincil Mavi Tonu */
+    --light-green: #C8E6C9;   /* Açık Yeşil */
+    --light-blue: #BBDEFB;    /* Açık Mavi */
+    --text-dark: #333;
+    --text-light: #f9f9f9;
+    --bg-light-gray: #f4f6f9; /* Sayfa Arka Planı */
+    --border-color: #ddd;
+    --card-bg: #ffffff;
+    --navbar-bg: #38761D; /* Koyu Yeşil Navbar */
+    --navbar-link-color: #E0F2F1; /* Navbar Link Rengi */
+    --navbar-link-hover-color: #ffffff;
+    --navbar-link-active-color: #A5D6A7; /* Aktif Link için Açık Yeşil */
+    --button-hover-darken: 10%; /* Buton hover için koyulaştırma miktarı */
+}
+
+/* Genel Sayfa Stilleri */
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Daha yumuşak bir font */
+    background-color: var(--bg-light-gray);
+    padding-top: 75px; /* Navbar yüksekliği + biraz boşluk */
+    color: var(--text-dark);
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Navbar Stilleri */
+.navbar {
+    background-color: var(--navbar-bg) !important; 
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.navbar-brand {
+    font-weight: 700; /* Daha kalın */
+    color: var(--text-light) !important;
+    font-size: 1.4rem;
+}
+.navbar-brand:hover {
+    color: var(--navbar-link-hover-color) !important;
+}
+.navbar-brand i {
+    color: var(--primary-green); /* Logodaki ikon için farklı renk */
+}
+
+.nav-link {
+    color: var(--navbar-link-color) !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--navbar-link-hover-color) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+}
+
+.nav-link.active {
+    color: var(--navbar-link-hover-color) !important;
+    font-weight: 700;
+    background-color: var(--primary-green) !important; /* Aktif link arka planı */
+    border-radius: 0.25rem;
+}
+.nav-link.active i {
+    /* color: var(--navbar-link-active-color); */
+}
+
+/* Ana Sayfa - Hero Bölümü */
+.hero-section {
+    background-color: var(--card-bg);
+    border-radius: .75rem;
+    padding: 3rem 1.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.07);
+}
+.hero-section .display-5 {
+    color: var(--navbar-bg); /* Ana başlık için koyu yeşil */
+    margin-bottom: 0.75rem;
+}
+.hero-section .lead {
+    color: #555;
+    font-size: 1.1rem;
+}
+.hero-section img {
+    border: 3px solid var(--primary-green);
+    border-radius: 50%; /* Logoyu yuvarlak yap */
+    padding: 5px;
+    background-color: var(--light-green);
+}
+
+
+/* Ana Sayfa Kart Stilleri */
+h2.section-title { /* "Hızlı Erişim Modülleri" gibi bölüm başlıkları */
+    color: var(--navbar-bg);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+h2.section-title::after { /* Başlık altına çizgi */
+    content: '';
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-green);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.card-module {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: .75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05);
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+    text-align: center; /* Kart içeriğini ortala */
+    padding-top: 1.5rem; /* İkon için üst boşluk */
+}
+
+.card-module:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.1)!important;
+}
+
+.card-module .card-icon i {
+    font-size: 2.8rem; /* İkonları büyüt */
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 50%; /* İkon arka planını yuvarlak yap */
+    color: var(--text-light);
+    display: inline-block;
+    width: 80px; /* İkon arka planı için sabit genişlik/yükseklik */
+    height: 80px;
+    line-height: 50px; /* İkonu dikeyde ortala */
+}
+/* Kart ikonlarına özel renkler */
+.card-module .icon-musteri { background-color: #2196F3; } /* Mavi */
+.card-module .icon-hayvan { background-color: #FF9800; } /* Turuncu */
+.card-module .icon-veteriner { background-color: #009688; } /* Teal */
+.card-module .icon-randevu { background-color: #9C27B0; } /* Mor */
+.card-module .icon-tedavi { background-color: #E91E63; } /* Pembe */
+.card-module .icon-ilac { background-color: #795548; } /* Kahverengi */
+.card-module .icon-fatura { background-color: #607D8B; } /* Mavi Gri */
+
+
+.card-module .card-title {
+    color: var(--text-dark);
+    font-weight: 600; /* Daha kalın başlık */
+    margin-top: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.card-module .card-text {
+    font-size: 0.88rem;
+    color: #666;
+    min-height: 40px; /* Kart metinleri için minimum yükseklik (hizalama) */
+}
+
+.card-module .btn {
+    margin-top: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px; /* Butonları hap şeklinde yap */
+}
+.card-module .btn-primary { background-color: var(--primary-green); border-color: var(--primary-green); }
+.card-module .btn-primary:hover { background-color: #3e8e41; border-color: #3e8e41; }
+/* Diğer butonlar için de benzer hover tanımları eklenebilir veya Bootstrap'in varsayılanı kullanılabilir. */
+
+
+/* Tablo ve Diğer Sayfa Başlıkları */
+h2.page-title {
+    color: var(--navbar-bg);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    border-bottom: 3px solid var(--primary-green);
+    padding-bottom: 0.75rem;
+    display: inline-block;
+}
+
+/* ... (Diğer tablo, form, badge, buton stilleriniz olduğu gibi kalabilir veya bu temaya uyarlanabilir) ... */
+
+.table thead.table-dark th {
+    background-color: var(--navbar-bg); /* Tablo başlığı da navbar rengiyle uyumlu */
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Dropdown menü ikonları için */
+.dropdown-menu i.fas, .dropdown-menu i.bi {
+    width: 20px; /* İkonların hizalı durması için */
+    text-align: center;
+}
